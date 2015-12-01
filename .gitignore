@@ -1,0 +1,6 @@
+Host/bin/*
+MySitelet/bin/*
+Host/obj/*
+MySitelet/Scripts/*
+packages/*
+MySitelet/obj/*
