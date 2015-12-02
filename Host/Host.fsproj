@@ -67,6 +67,10 @@
       <HintPath>..\packages\WebSharper.Owin.3.6.1.115\lib\net45\HttpMultipartParser.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="IntelliFactory.Core">
+      <HintPath>..\packages\WebSharper.Compiler.3.6.2.220\lib\net40\IntelliFactory.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Owin">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
@@ -87,6 +91,18 @@
       <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\packages\WebSharper.Compiler.3.6.2.220\lib\net40\Mono.Cecil.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\packages\WebSharper.Compiler.3.6.2.220\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\packages\WebSharper.Compiler.3.6.2.220\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
@@ -102,6 +118,10 @@
     <Reference Include="System.Web" />
     <Reference Include="WebSharper.Collections">
       <HintPath>..\packages\WebSharper.3.6.2.220\lib\net40\WebSharper.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebSharper.Compiler">
+      <HintPath>..\packages\WebSharper.Compiler.3.6.2.220\lib\net40\WebSharper.Compiler.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.Control">

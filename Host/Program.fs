@@ -11,10 +11,10 @@
     let Main = function
         | [| rootDirectory; url |] ->
                 use server = WebApp.Start(url, fun appB ->
-                    let bin = @"C:\Projects\Host\MySitelet"
-                    
-                    appB.UseStaticFiles(StaticFileOptions(FileSystem = PhysicalFileSystem(bin))) |> ignore
-                    appB.UseSitelet(bin, MySitelet.Site.Main, binDirectory = bin) |> ignore
+                    let root = @"C:\Projects\Host\MySitelet"
+                    let bin = @"C:\Projects\Host\Host\bin\Debug"
+                    appB.UseStaticFiles(StaticFileOptions(FileSystem = PhysicalFileSystem(root))) |> ignore
+                    appB.UseSitelet(root, Site.sitelet, binDirectory = bin) |> ignore
                 )
                 
                 stdout.WriteLine("Serving {0}", url)

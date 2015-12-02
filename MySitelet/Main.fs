@@ -44,7 +44,6 @@ module Templating =
             }
 
 module Site =
-
     let HomePage ctx =
         Templating.Main ctx EndPoint.Home "Home" [
             H1 [Text "Say Hi to the server!"]
@@ -57,36 +56,9 @@ module Site =
             P [Text "This is a template self-hosted WebSharper client-server application."]
         ]
 
-    let Main =
+    let sitelet = 
         Application.MultiPage (fun ctx action ->
             match action with
             | Home -> HomePage ctx
             | About -> AboutPage ctx
         )
-
-
-module SelfHostedServer =
-
-    open global.Owin
-    open Microsoft.Owin.Hosting
-    open Microsoft.Owin.StaticFiles
-    open Microsoft.Owin.FileSystems
-    open WebSharper.Owin
-
-    [<EntryPoint>]
-    let Main args =
-        let rootDirectory, url =
-            match args with
-            | [| rootDirectory; url |] -> rootDirectory, url
-            | [| url |] -> "..", url
-            | [| |] -> "..", "http://localhost:9000/"
-            | _ -> eprintfn "Usage: MySitelet ROOT_DIRECTORY URL"; exit 1
-        use server = WebApp.Start(url, fun appB ->
-            appB.UseStaticFiles(
-                    StaticFileOptions(
-                        FileSystem = PhysicalFileSystem(rootDirectory)))
-                .UseSitelet(rootDirectory, Site.Main)
-            |> ignore)
-        stdout.WriteLine("Serving {0}", url)
-        stdin.ReadLine() |> ignore
-        0
