@@ -1,4 +1,4 @@
-# SiteletOwinHost
+# Sitelet + Owin host
 
 Example of WebSharper Sitelet referenced in external Owin host.
 
